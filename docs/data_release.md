@@ -4,7 +4,8 @@ Motion packages contain one final SMPL-X NPZ per sample, split into tar archives
 
 - [How2Sign-MV3D](https://huggingface.co/datasets/mage0001/How2Sign-MV3D): 34,939 final multi-view-curated sequences, stored in the frontal body coordinate representation.
 - [ASLCitizen-3D](https://huggingface.co/datasets/mage0001/ASLCitizen-3D): 83,325 final single-view reconstructions.
-- [How2Sign GPT-5.2 pseudo-gloss annotations](https://huggingface.co/datasets/mage0001/How2Sign-PseudoGloss) and [SGNify-MV rendered videos](https://huggingface.co/datasets/mage0001/SGNify-MV): upload in progress.
+- [How2Sign GPT-5.2 pseudo-gloss annotations](https://huggingface.co/datasets/mage0001/How2Sign-PseudoGloss): 35,263 saved source-sentence labels.
+- [SGNify-MV rendered videos](https://huggingface.co/datasets/mage0001/SGNify-MV): 57 signs, 114 full-sequence 30-FPS videos with camera/render metadata and explicit frame correspondence.
 - MM-WLAuslan-MV3D and model-training/rendering scripts: being organized.
 
 NPZ parameters are predictions, not calibrated motion-capture ground truth. Non-sign removal and motion blending change the correspondence to original RGB frame indices. Consult the dataset card and temporal bookkeeping fields when aligning frames.
