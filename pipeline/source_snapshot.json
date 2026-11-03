@@ -41,6 +41,10 @@
     "aios_adapter/LICENSE": {
       "source_name": "LICENSE",
       "source_sha256": "71cd2ce5c31def14d99977f22b18d48852727adb2ec0eb8fef5bea855920e3e6"
+    },
+    "single_view/merge_aios_wilor.py": {
+      "source_name": "merge_aios_wilor.py",
+      "source_sha256": "3b1de868e228afbeaa3298068142fae8e66db8ef70d83cc9c117745f005c4487"
     }
   },
   "hooks_source_sha256": "ebb046316c759ac68edfb9dfa56c840073e9138918419a95e1422d30e438aa04"
