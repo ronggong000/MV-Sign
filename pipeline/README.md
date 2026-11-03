@@ -49,7 +49,7 @@ The exact thresholds are in the source snapshot, not hidden in a trained repair 
 
 `poses` contains SMPL-X local axis-angle rotations in radians; `betas` contains fitted shape parameters. `source_frame_index`, `source_padding_mask`, `synthetic_bridge_mask`, and `wilor_hand_valid_mask` retain temporal/validity bookkeeping. `trans` may be a placeholder; `cam_trans` is not a calibrated motion-capture camera trajectory. Saved tracking keypoints are not recomputed FK from repaired poses.
 
-To process a single-view dataset, call `merge_aios_wilor.py` with `--aios_dir`, `--wilor_dir`, and `--output_dir`. That operation does not provide cross-view correction; it must not be described as a multi-view reconstruction.
+For the standalone single-view utility, call `single_view/merge_aios_wilor.py` with `--aios_dir`, `--wilor_dir`, and `--output_dir`. It includes its own wrist/hand reliability handling and optional head/tail trimming; `--disable_head_tail_trim` preserves already selected intervals and `--zero_root` is an explicit optional override. This operation does not provide cross-view correction. The top-level `merge_aios_wilor.py` is the per-view stage of the multi-view pipeline; these utilities are not interchangeable configurations.
 
 ## Scope
 
