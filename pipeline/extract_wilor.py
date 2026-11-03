@@ -23,7 +23,8 @@ def validate_frame_count(path, advertised, decoded):
     if advertised > 0 and advertised == decoded:
         report['validation'] = 'opencv count matches container'
         return report
-    probe = shutil.which('ffprobe') or str(Path(sys.executable).with_name('ffprobe'))
+    local_probe = Path(sys.executable).with_name('ffprobe')
+    probe = str(local_probe) if local_probe.is_file() else shutil.which('ffprobe')
     result = subprocess.run([str(probe), '-v', 'error', '-select_streams', 'v:0', '-count_frames',
                              '-show_entries', 'stream=nb_frames,nb_read_frames', '-of', 'json', str(path)],
                             capture_output=True, text=True, timeout=120)
