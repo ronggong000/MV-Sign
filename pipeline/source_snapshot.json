@@ -1,0 +1,47 @@
+{
+  "run": "run_20261023_staged_v12",
+  "core_logic": "Frozen production sources; wrapper and inference path configuration are release additions. extract_wilor.py replaces local installation paths with WILOR_MINI_ROOT and PATH-based FFprobe lookup.",
+  "files": {
+    "merge_aios_wilor.py": {
+      "source_name": "merge_aios_wilor.py",
+      "source_sha256": "c30bcf7b6dabaae7000cdcc8586baa5a72b4dde75b3ce87575897307a0497054"
+    },
+    "align_views.py": {
+      "source_name": "align_views.py",
+      "source_sha256": "348eff1d543749d65cac81aa0ea28c5a0319f22e0564757959fffcd2efb89648"
+    },
+    "fuse_poses.py": {
+      "source_name": "fuse_poses.py",
+      "source_sha256": "e9bfd16f81949eeda362317bb0df3658ba8dbda251262ee9d9f7076310f85140"
+    },
+    "solve_hand_coordinate_frames.py": {
+      "source_name": "solve_hand_coordinate_frames_cpu.py",
+      "source_sha256": "3ab893624e7f0cfb8383f8272716dde8734bbd34218ec6cf9583bc1ea354eac6"
+    },
+    "extract_wilor.py": {
+      "source_name": "how2sign_wilor_stream.py",
+      "source_sha256": "fb545383b520ac02f1804c7141cfcf4d8908ba109a9303a600e4e361f6db9a0e"
+    },
+    "aios_adapter/engine.py": {
+      "source_name": "aios_engine.py",
+      "source_sha256": "90cfc56678443bce5359e719de24784563b6236b471d7694537342b22e1c397f"
+    },
+    "aios_adapter/main3.py": {
+      "source_name": "aios_main3.py",
+      "source_sha256": "b81f9d8becdb9dd44bd0a4e09fee14031cf6f0b9e0bfcaa00be7c6c24bf3d5b0"
+    },
+    "aios_adapter/INFERENCE_demo.py": {
+      "source_name": "aios_INFERENCE_demo.py",
+      "source_sha256": "66f31e17504c4e82ae2484c6cb8149ed03682ccf9df554f29a5db761fb65edd9"
+    },
+    "aios_adapter/aios_smplx_demo.py": {
+      "source_name": "aios_smplx_demo.py",
+      "source_sha256": "07ace2d8dae8c1fc1b1d103fef64565b722e4bd46b8d63552165c8bf15b20078"
+    },
+    "aios_adapter/LICENSE": {
+      "source_name": "LICENSE",
+      "source_sha256": "71cd2ce5c31def14d99977f22b18d48852727adb2ec0eb8fef5bea855920e3e6"
+    }
+  },
+  "hooks_source_sha256": "ebb046316c759ac68edfb9dfa56c840073e9138918419a95e1422d30e438aa04"
+}

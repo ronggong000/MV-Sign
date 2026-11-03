@@ -1,23 +1,14 @@
-# Data Release Status
+# Resources
 
-The two repositories below have been created. Data are being packaged and uploaded; a repository link alone does not mean the upload is complete or publicly accessible.
+Motion packages contain one final SMPL-X NPZ per sample, split into tar archives. `samples.csv`, `manifest.json`, and `SHA256SUMS` describe identifiers, splits, frame counts, and integrity checks. Read per-sample FPS from the saved metadata; do not assume 30 FPS for all datasets.
 
-| Resource | Host | Download URL | SHA-256 manifest |
-|---|---|---|---|
-| How2Sign-MV3D | Hugging Face | https://huggingface.co/datasets/mage0001/How2Sign-MV3D (upload pending verification) | Included with completed upload |
-| ASLCitizen-3D | Hugging Face, private backup | https://huggingface.co/datasets/mage0001/ASLCitizen-3D (not publicly downloadable) | Included with completed upload |
-| MM-WLAuslan-MV3D | To be confirmed | Pending | Pending |
-| SGNify-MV | To be confirmed | Pending | Pending |
+- [How2Sign-MV3D](https://huggingface.co/datasets/mage0001/How2Sign-MV3D): 34,939 final multi-view-curated sequences, stored in the frontal body coordinate representation.
+- [ASLCitizen-3D](https://huggingface.co/datasets/mage0001/ASLCitizen-3D): 83,325 final single-view reconstructions.
+- [How2Sign GPT-5.2 pseudo-gloss annotations](https://huggingface.co/datasets/mage0001/How2Sign-PseudoGloss) and [SGNify-MV rendered videos](https://huggingface.co/datasets/mage0001/SGNify-MV): upload in progress.
+- MM-WLAuslan-MV3D and model-training/rendering scripts: being organized.
 
-## Packaging Requirements
+NPZ parameters are predictions, not calibrated motion-capture ground truth. Non-sign removal and motion blending change the correspondence to original RGB frame indices. Consult the dataset card and temporal bookkeeping fields when aligning frames.
 
-- The three motion resources contain one final SMPL-X sequence per sample, without per-view intermediate predictions.
-- SGNify-MV contains rendered frontal and side videos; the rendering code is distributed separately in the code repository.
-- Split large resources into independently downloadable archives and provide an archive manifest, sample identifiers, split assignments where applicable, and SHA-256 checksums.
-- Document array fields, shapes, units, frame rates, coordinate conventions, and correspondence to upstream sample identifiers.
-- Verify dataset-specific redistribution conditions before publishing download links.
-- Retain local source data until the uploaded files have been checked against their checksums.
+## Attribution
 
-## Access and Use
-
-How2Sign-MV3D will be made public only after all remote archive sizes and hashes match the local verified package. Its source is How2Sign, whose terms require attribution and noncommercial use. ASLCitizen-3D is held privately pending confirmation of redistribution permission under the original Microsoft Research dataset terms. The other resources and processing/training/rendering code are being organized.
+Original resources: [How2Sign](https://how2sign.github.io/), [ASL Citizen](https://www.microsoft.com/en-us/research/project/asl-citizen/), and [SGNify](https://sgnify.is.tue.mpg.de/). Their respective dataset and model terms continue to apply; this repository does not relicense upstream materials. How2Sign is published under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). ASL Citizen terms are available [here](https://www.microsoft.com/en-us/research/project/asl-citizen/dataset-license/). SMPL-X/MANO models and estimator checkpoints must be obtained separately.
