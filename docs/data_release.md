@@ -1,5 +1,7 @@
 # Resources
 
+See the [project overview](../README.md) for method illustrations and release status, or the [download and loading guide](getting_started.md) for executable examples. You do not need to run the estimators again to use the final motion releases.
+
 Motion packages contain one final SMPL-X NPZ per sample, split into tar archives. `samples.csv`, `manifest.json`, and `SHA256SUMS` describe identifiers, splits, frame counts, and integrity checks. Read per-sample FPS from the saved metadata; do not assume 30 FPS for all datasets.
 
 - [How2Sign-MV3D](https://huggingface.co/datasets/mage0001/How2Sign-MV3D): 34,939 final multi-view-curated sequences, stored in the frontal body coordinate representation.

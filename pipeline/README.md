@@ -1,5 +1,7 @@
 # Motion Extraction and Curation
 
+[Project overview](../README.md) · [Download and load released motions](../docs/getting_started.md) · [Resource terms](../docs/data_release.md)
+
 This directory contains the production `merge_aios_wilor.py`, `align_views.py`, and `fuse_poses.py` snapshot used for the regenerated How2Sign-MV3D release, plus portable entry points. `source_snapshot.json` records source hashes. Raw estimator weights, SMPL-X/MANO files, textures, and videos are not bundled.
 
 ## 1. Extract Raw Predictions (GPU)
