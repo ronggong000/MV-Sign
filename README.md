@@ -32,9 +32,7 @@ MV-Sign connects **better 3D signing-motion supervision** with **better text-to-
 - **Reusable annotations and diagnostics:** original saved How2Sign pseudo-gloss labels, plus 114 frontal/side SGNify-MV rendered videos with explicit frame correspondence.
 - **Sign-aware production:** joint body/hand tokenization with three token streams, a pseudo-gloss adapter, and retrieval prompts selected using per-clip sign-recognizer attribution.
 
-> **Available now:** final motion datasets, pseudo-gloss annotations, SGNify-MV videos, and extraction/curation code. Generator training code, pretrained generation weights, and SGNify rendering code are not yet included; see [release status](#release-status).
->
-> **Version:** Public development snapshot on `main` (no tagged software release yet). The 2026 arXiv preprint is available; the WACV 2027 label should not be mistaken for an already published proceedings record.
+**Version:** Development snapshot on `main`.
 
 ## News
 
@@ -53,9 +51,9 @@ Large archives are hosted on Hugging Face, not in this Git repository. Each rele
 | **SGNify-MV** | Rendered frontal/side videos with camera/render metadata | **57 signs / 114 videos, 30 FPS** | [Download](https://huggingface.co/datasets/mage0001/SGNify-MV) |
 | **MM-WLAuslan-MV3D** | Final SMPL-X motion sequences | Release in preparation | Pending |
 
-**How2Sign-MV3D split:** 30,903 train / 1,711 validation / 2,325 test. These counts describe the regenerated release, not a rerun of the paper's training experiments. Pseudo-gloss labels retain the original sentence set; join identifiers with the motion manifest instead of assuming equal counts or positional correspondence.
+**How2Sign-MV3D split:** 30,903 train / 1,711 validation / 2,325 test. Pseudo-gloss labels retain the original sentence set; join identifiers with the motion manifest instead of assuming equal counts or positional correspondence.
 
-The motion releases are **reconstructed estimates, not motion-capture ground truth**. Raw source videos, original SGNify GT meshes, SMPL-X/MANO model assets, and pretrained estimator weights are not bundled. SGNify-MV contains rendered videos and metadata, **not a complete Blender scene**.
+Final motions are reconstructed SMPL-X estimates. SGNify-MV provides rendered videos and metadata.
 
 See the [download and loading guide](docs/getting_started.md), [resource details and terms](docs/data_release.md), and the individual dataset cards for exact schemas, frame rates, manifests, and checksums.
 
@@ -116,7 +114,7 @@ SMPL-X/MANO assets are needed separately to reconstruct meshes, but not to inspe
 
 1. **Extract:** run AiOS for whole-body SMPL-X estimates and WiLoR for detailed left/right hand estimates.
 2. **Fuse within each view:** check wrist/hand reliability and combine compatible body and hand estimates.
-3. **Align and jointly repair:** compare both views and neighboring frames to identify unreliable wrist/finger articulation. This is a cross-view consistency process, not simply copying one view's hands into the other.
+3. **Align and jointly repair:** compare both views and neighboring frames to identify unreliable wrist/finger articulation. 
 4. **Curate time and smooth:** remove detected non-sign spans, insert motion-blend transitions, and apply body smoothing.
 5. **Save one final motion:** use the frontal body coordinate representation for the released sequence; side outputs are diagnostic intermediates, not additional training samples.
 
@@ -154,7 +152,7 @@ The architecture retains the three-stream generation interface of SOKE. The curr
   <img src="assets/motion_comparison.webp" alt="Paper qualitative comparison: source How2Sign RGB, NSA reconstruction, and MV-Sign curated reconstruction" width="100%">
 </p>
 
-Examples from the paper compare source RGB (top), NSA reconstructions (middle), and our curated motions (bottom), illustrating differences in wrist and finger articulation. The RGB row is a visual reference, not 3D motion-capture ground truth. These paper illustrations are not a claim of an additional paired 3D ground-truth release.
+Examples from the paper compare source RGB (top), NSA reconstructions (middle), and our curated motions (bottom), illustrating differences in wrist and finger articulation. 
 
 ## Release Status
 
@@ -169,15 +167,9 @@ Examples from the paper compare source RGB (top), NSA reconstructions (middle), 
 | Tokenizer/generator training code and pretrained generation weights | Not yet released | Being organized |
 | SGNify-MV rendering source code | In preparation | Scene/model assets are not bundled |
 
-## Attribution and Terms
-
-Please cite MV-Sign and the original datasets used in your experiments. Dataset, estimator, and body-model terms apply independently; this repository does not relicense upstream content or grant rights to source videos, body models, or checkpoints. See [resource attribution and terms](docs/data_release.md).
-
-MV-Sign builds on [AiOS](https://github.com/ttxskk/AiOS), [WiLoR-mini](https://github.com/warmshao/WiLoR-mini), [SMPL-X](https://smpl-x.is.tue.mpg.de/), How2Sign, ASL Citizen, SGNify, and the SOKE generation framework. Third-party notices retained with the released code continue to apply.
-
 ## Citation and Contact
 
-**Paper:** [MV-Sign: Multi-View 3D Motion Integration and Enhanced Text-to-Motion Conditioning for Sign Language Production](https://arxiv.org/abs/2611.07811), arXiv:2611.07811 (2026). This is the arXiv-preprint citation, not a final WACV 2027 proceedings entry. A machine-readable entry is available in [CITATION.cff](CITATION.cff).
+Machine-readable citation: [CITATION.cff](CITATION.cff).
 
 ```bibtex
 @misc{muk2026mvsign,
@@ -191,10 +183,11 @@ MV-Sign builds on [AiOS](https://github.com/ttxskk/AiOS), [WiLoR-mini](https://g
 }
 ```
 
-### Version and licenses
+### Licensing
 
-This GitHub repository currently provides a **development snapshot on `main`**, without a tagged software release. No blanket project-wide code license has been specified. Public repository access is not in itself permission to reuse or relicense original project code; please contact the maintainers for reuse permissions until an explicit license is selected and published.
-
-The bundled AiOS-derived code retains its separate upstream license (`pipeline/aios_adapter/LICENSE`). Third-party AiOS, WiLoR, SMPL-X/MANO, data and pretrained weights retain their original terms; the repository does not relicense them. How2Sign-derived datasets are published under CC BY-NC 4.0 as noted on their individual cards; ASL Citizen and SGNify materials require following their own source terms. See [data release information](docs/data_release.md).
+A project-wide code license has not yet been selected. Upstream licenses are
+retained, including [AiOS](pipeline/aios_adapter/LICENSE). See
+[dataset attribution and terms](docs/data_release.md) for How2Sign, ASL Citizen,
+SGNify, and SMPL-X dependencies.
 
 For questions about the code or released data, please [open an issue](https://github.com/ronggong000/MV-Sign/issues).
