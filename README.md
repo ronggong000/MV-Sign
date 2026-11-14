@@ -6,6 +6,10 @@
 
 **WACV 2027**
 
+**Singyu Muk · Kaustubh Kundu · Kunyuan Xie · Weijie Wang · Kalin Stefanov**
+
+**[Paper (arXiv:2611.07811)](https://arxiv.org/abs/2611.07811) · [PDF](https://arxiv.org/pdf/2611.07811) · [CITATION.cff](CITATION.cff)**
+
 [![Conference](https://img.shields.io/badge/WACV-2027-167c80)](#overview)
 [![How2Sign-MV3D](https://img.shields.io/badge/Hugging%20Face-How2Sign--MV3D-ffd21e)](https://huggingface.co/datasets/mage0001/How2Sign-MV3D)
 [![ASLCitizen-3D](https://img.shields.io/badge/Hugging%20Face-ASLCitizen--3D-ffd21e)](https://huggingface.co/datasets/mage0001/ASLCitizen-3D)
@@ -29,6 +33,8 @@ MV-Sign connects **better 3D signing-motion supervision** with **better text-to-
 - **Sign-aware production:** joint body/hand tokenization with three token streams, a pseudo-gloss adapter, and retrieval prompts selected using per-clip sign-recognizer attribution.
 
 > **Available now:** final motion datasets, pseudo-gloss annotations, SGNify-MV videos, and extraction/curation code. Generator training code, pretrained generation weights, and SGNify rendering code are not yet included; see [release status](#release-status).
+>
+> **Version:** Public development snapshot on `main` (no tagged software release yet). The 2026 arXiv preprint is available; the WACV 2027 label should not be mistaken for an already published proceedings record.
 
 ## News
 
@@ -171,6 +177,24 @@ MV-Sign builds on [AiOS](https://github.com/ttxskk/AiOS), [WiLoR-mini](https://g
 
 ## Citation and Contact
 
-**MV-Sign: Multi-View 3D Motion Integration and Enhanced Text-to-Motion Conditioning for Sign Language Production**, WACV 2027. The paper link and final BibTeX entry will be added when the public bibliographic record is available.
+**Paper:** [MV-Sign: Multi-View 3D Motion Integration and Enhanced Text-to-Motion Conditioning for Sign Language Production](https://arxiv.org/abs/2611.07811), arXiv:2611.07811 (2026). This is the arXiv-preprint citation, not a final WACV 2027 proceedings entry. A machine-readable entry is available in [CITATION.cff](CITATION.cff).
+
+```bibtex
+@misc{muk2026mvsign,
+  title         = {MV-Sign: Multi-View 3D Motion Integration and Enhanced Text-to-Motion Conditioning for Sign Language Production},
+  author        = {Muk, Singyu and Kundu, Kaustubh and Xie, Kunyuan and Wang, Weijie and Stefanov, Kalin},
+  year          = {2026},
+  eprint        = {2611.07811},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  url           = {https://arxiv.org/abs/2611.07811}
+}
+```
+
+### Version and licenses
+
+This GitHub repository currently provides a **development snapshot on `main`**, without a tagged software release. No blanket project-wide code license has been specified. Public repository access is not in itself permission to reuse or relicense original project code; please contact the maintainers for reuse permissions until an explicit license is selected and published.
+
+The bundled AiOS-derived code retains its separate upstream license (`pipeline/aios_adapter/LICENSE`). Third-party AiOS, WiLoR, SMPL-X/MANO, data and pretrained weights retain their original terms; the repository does not relicense them. How2Sign-derived datasets are published under CC BY-NC 4.0 as noted on their individual cards; ASL Citizen and SGNify materials require following their own source terms. See [data release information](docs/data_release.md).
 
 For questions about the code or released data, please [open an issue](https://github.com/ronggong000/MV-Sign/issues).
