@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use MV-Sign or its released resources, please cite the arXiv preprint and relevant source datasets."
+title: "MV-Sign: Multi-View 3D Motion Integration and Enhanced Text-to-Motion Conditioning for Sign Language Production"
+type: software
+authors:
+  - family-names: Muk
+    given-names: Singyu
+  - family-names: Kundu
+    given-names: Kaustubh
+  - family-names: Xie
+    given-names: Kunyuan
+  - family-names: Wang
+    given-names: Weijie
+  - family-names: Stefanov
+    given-names: Kalin
+repository-code: "https://github.com/ronggong000/MV-Sign"
+preferred-citation:
+  type: article
+  title: "MV-Sign: Multi-View 3D Motion Integration and Enhanced Text-to-Motion Conditioning for Sign Language Production"
+  authors:
+    - family-names: Muk
+      given-names: Singyu
+    - family-names: Kundu
+      given-names: Kaustubh
+    - family-names: Xie
+      given-names: Kunyuan
+    - family-names: Wang
+      given-names: Weijie
+    - family-names: Stefanov
+      given-names: Kalin
+  year: 2026
+  journal: "arXiv preprint arXiv:2611.07811"
+  url: "https://arxiv.org/abs/2611.07811"
